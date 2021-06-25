@@ -10,7 +10,7 @@ export class Utils {
     }
 
 
-
+    /* istanbul ignore next */
     public static toUpperCase(arg: string) {
         return arg.toUpperCase();
     }
