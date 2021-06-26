@@ -19,9 +19,19 @@ describe('LoginHandler test suite' , () => {
         loginHandler = new LoginHandler(requestMock, responseMock, authorizerMock);
     });
 
+    afterEach(() => {
+        jest.clearAllMocks();
+    });
+
     test('options request', async () => {
         requestMock.method = HTTP_METHODS.OPTIONS;
         await loginHandler.handleRequest();
         expect(responseMock.writeHead).toBeCalledWith(HTTP_CODES.OK);
     });
+
+    test('not handled http method', async () => {
+        requestMock.method = 'WhateverMethod';
+        await loginHandler.handleRequest();
+        expect(responseMock.writeHead).not.toHaveBeenCalled();
+    })
 })
