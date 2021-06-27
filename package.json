@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "itest": "jest --config jest.config.itest.ts",
+    "start": "ts-node src/app/Launcher.ts"
   },
   "repository": {
     "type": "git",
