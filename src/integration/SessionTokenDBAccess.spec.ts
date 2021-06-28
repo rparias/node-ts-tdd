@@ -34,7 +34,7 @@ describe('SessionTokenDBAccess integration test suite', () => {
             await sessionTokenDBAccess.deleteToken(someSessionToken.tokenId);
         } catch (error) {
             expect(error).toBeInstanceOf(Error);
-            expect(error).toHaveProperty('message', 'SessionToken not deleted')
+            expect(error).toHaveProperty('message', 'SessionToken not deleted!')
         }
     });
 })
